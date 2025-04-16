@@ -1,0 +1,135 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f1ee;
+  color: #333;
+}
+
+.logo {
+  font-weight: bold;
+  background: #006400;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+}
+header {
+  display: flex;
+  background-color: white;
+  justify-content: space-around;
+
+  padding: 0.5rem;
+  
+  .container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    nav {
+      /*makes this last item in this flexbox be right aligned */
+      margin-left: auto; 
+      .search-btn {
+        display: inline;
+      }
+    }
+  }
+
+  .search {
+    display: none;
+  }
+}
+.nav-categories {
+  /* display: none; */
+  padding: 0;
+  background: #f2f1ee;
+  border-bottom: 1.6px solid rgba(37, 37, 37, 0.098);
+
+  .container {
+    justify-content: space-around;
+    a{
+      padding: 1rem 1rem;
+      transition: all 0.2s;
+      border-bottom: 1.6px solid rgba(100, 100, 100, 0.0);
+    }
+    a:hover {
+      border-bottom: 1.6px solid #333;
+    }
+  }
+}
+
+
+main {
+  display: flex;
+  justify-content: space-around;
+  .container {
+    width: 100%;
+  }
+}
+
+.top-greeting {
+  text-align: center;
+}
+
+.top-actions {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  .action {
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+  }
+}
+
+.top-info {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  > * {
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 1rem;
+  }
+  .opening-hours {
+    text-align: center;
+  }
+}
+
+@media (min-width: 768px) {
+  header .container, main .container {
+    width: 700px;
+  }
+  header .container nav .search-btn {
+    display: none !important;
+  }
+  header .search {
+    display: block;
+  }
+  .nav-categories {
+    display: flex;
+  }
+  .top-actions {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .top-info {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  header .container, main .container {
+    width: 900px;
+  }
+  .top-actions {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

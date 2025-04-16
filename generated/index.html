@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Systembolaget</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f1ee;
+      color: #333;
+    }
+
+    header {
+      background: white;
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-weight: bold;
+      background: #006400;
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    .search {
+      flex: 1;
+      margin: 0 1rem;
+    }
+
+    .search input {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    nav {
+      background: #f2f1ee;
+      padding: 0.5rem 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      font-size: 0.9rem;
+    }
+
+    .container {
+      padding: 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      margin: 2rem 0;
+    }
+
+    .card {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .opening-hours {
+      background: white;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      .search {
+        width: 100%;
+        margin: 1rem 0;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        justify-content: flex-start;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Systembolaget</div>
+    <div class="search">
+      <input type="text" placeholder="Sök dryck, maträtt...">
+    </div>
+    <div>
+      <a href="#">Logga in</a> |
+      <a href="#">Varukorg</a>
+    </div>
+  </header>
+
+  <nav>
+    <a href="#">Nytt</a>
+    <a href="#">Vin</a>
+    <a href="#">Öl</a>
+    <a href="#">Sprit</a>
+    <a href="#">Cider</a>
+    <a href="#">Alkoholfritt</a>
+    <a href="#">Dryck & Mat</a>
+  </nav>
+
+  <div class="container">
+    <h1>Välkommen till Systembolaget</h1>
+
+    <div class="grid">
+      <div class="card">Se hela sortimentet</div>
+      <div class="card">Hitta varor i butik</div>
+      <div class="card">Handla online</div>
+      <div class="card">Min smakprofil</div>
+    </div>
+
+    <div class="card">
+      <strong>Dryckesplaneraren</strong><br>
+      Hur mycket går det åt till finmiddagen?
+    </div>
+
+    <div class="opening-hours">
+      <h3>Öppettider i påsk</h3>
+      <p><strong>Tor 17/4</strong> skärtorsdag: Ordinarie öppettid</p>
+      <p><strong>Fre 18/4</strong> långfredag: Stängt</p>
+      <p><strong>Lör 19/4</strong> påskafton: Öppet till 15:00</p>
+      <p><strong>Sön 20/4</strong> påskdagen: Stängt</p>
+      <p><strong>Mån 21/4</strong> annandag påsk: Stängt</p>
+    </div>
+  </div>
+
+</body>
+</html>
