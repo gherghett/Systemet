@@ -16,4 +16,6 @@ Jag har gjort [samma sak fast med tailwind ](https://gherghett.github.io/Systeme
 ## En till fast gjord med tailwind
 ![alt text](screenshots/tailwind.png)
 
+screenshot-collage genererade med https://github.com/gherghett/lineup-screenshots
+
 Det finns [en AI-generad version också](https://gherghett.github.io/Systemet/generated/index.html).
