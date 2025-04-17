@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Logo Controls</title>
+</head>
+
+<body class="m-10 space-y-6 flex">
+    <!-- Controls -->
+    <div class="space-y-2">
+        <h2 class="text-xl font-bold">Toggle Elements</h2>
+        <label class="block"><input type="checkbox" checked id="toggleOverflow"> Overflow Hidden</label>
+        <label class="block"><input type="checkbox" checked id="toggleBgWhite"> White Background Rectangles</label>
+        <hr>
+        <label class="block"><input type="checkbox" checked id="toggleYellowRects"> Yellow Rectangles</label>
+        <label class="block"><input type="checkbox" checked id="toggleGreenRects"> Green Rectangles</label>
+        <hr>
+        <label class="block"><input type="checkbox" checked id="toggleTopLeft"> Top Left</label>
+        <label class="block"><input type="checkbox" checked id="toggleTopRight"> Top Right</label>
+        <label class="block"><input type="checkbox" checked id="toggleBottomLeft"> Bottom Left</label>
+        <label class="block"><input type="checkbox" checked id="toggleBottomRight"> Bottom Right</label>
+        <hr>
+
+    </div>
+
+    <!-- Logo -->
+    <div id="logo" class=" bg-slate-500 w-fit h-fit p-[0.150rem] overflow-hidden">
+        <div class="relative logo-wrapper w-fit">
+            <!-- Top left -->
+            <div class="top-left yellow absolute -top-2 -right-2 w-4 h-5 rotate-48 outline outline-3 outline-yellow-400"></div>
+            <div class="top-left green absolute -top-2.5 -right-4 w-7 h-5 rotate-48 outline outline-3 outline-green-800"></div>
+            <div class="top-left white absolute -top-[1.1rem] -right-6 w-10 h-7 rotate-48 bg-white"></div>
+
+            <!-- Top Right -->
+            <div class="top-right yellow absolute -top-2 -left-2 w-4 h-5 -rotate-48 outline outline-3 outline-yellow-400"></div>
+            <div class="top-right green absolute -top-2.5 -left-4 w-7 h-5 -rotate-48 outline outline-3 outline-green-800"></div>
+            <div class="top-right white absolute -top-[1.1rem] -left-6 w-10 h-7 -rotate-48 bg-white"></div>
+
+            <!-- bottom left-->
+            <div class="bottom-left yellow absolute -bottom-2 -left-2 w-4 h-5 rotate-48 outline outline-3 outline-yellow-400"></div>
+            <div class="bottom-left green absolute -bottom-2.5 -left-4 w-7 h-5 rotate-48 outline outline-3 outline-green-800"></div>
+            <div class="bottom-left white absolute -bottom-[1.1rem] -left-6 w-10 h-7 rotate-48 bg-white"></div>
+
+            <!-- bottom right-->
+            <div class="bottom-right yellow absolute -bottom-2 -right-2 w-4 h-5 -rotate-48 outline outline-3 outline-yellow-400"></div>
+            <div class="bottom-right green absolute -bottom-2.5 -right-4 w-7 h-5 -rotate-48 outline outline-3 outline-green-800"></div>
+            <div class="bottom-right white absolute -bottom-[1.1rem] -right-6 w-10 h-7 -rotate-48 bg-white"></div>
+
+            <div class="corner d r"></div>
+            <div class="corner d l"></div>
+            <div class="corner u l"></div>
+
+            <div class="uppercase text-center font-bold font-serif text-base/4 bg-green-800 text-yellow-400 border-yellow-400 border-3 outline-green-800 outline-3 p-2 px-4">
+                System<br>
+                Bolaget
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mapping of checkbox IDs to class selectors
+        const toggles = {
+            toggleTopLeft: '.top-left',
+            toggleTopRight: '.top-right',
+            toggleBottomLeft: '.bottom-left',
+            toggleBottomRight: '.bottom-right',
+        };
+
+        Object.entries(toggles).forEach(([checkboxId, selector]) => {
+            document.getElementById(checkboxId).addEventListener('change', (e) => {
+                document.querySelectorAll(selector).forEach(el => {
+                    el.style.display = e.target.checked ? '' : 'none';
+                });
+            });
+        });
+
+        // Toggle overflow
+        document.getElementById('toggleOverflow').addEventListener('change', (e) => {
+            const logo = document.getElementById('logo');
+            logo.classList.toggle('overflow-hidden', e.target.checked);
+            logo.classList.toggle('overflow-visible', !e.target.checked);
+        });
+
+        //toggle white bg
+        document.getElementById('toggleBgWhite').addEventListener('change', (e) => {
+            const showWhite = e.target.checked;
+            const whiteDivs = document.querySelectorAll('.white');
+            whiteDivs.forEach(el => {
+                el.classList.toggle('bg-white', showWhite);
+            });
+        });
+
+        document.getElementById('toggleYellowRects').addEventListener('change', (e) => {
+            const showYellows = !e.target.checked;
+            const yellowDivs = document.querySelectorAll('.yellow');
+            yellowDivs.forEach(el => {
+                el.classList.toggle('opacity-0', showYellows);
+            });
+        });
+
+        document.getElementById('toggleGreenRects').addEventListener('change', (e) => {
+            const showGreens = !e.target.checked;
+            const greenDivs = document.querySelectorAll('.green');
+            greenDivs.forEach(el => {
+                el.classList.toggle('opacity-0', showGreens);
+            });
+        });
+
+    </script>
+</body>
+
+</html>
