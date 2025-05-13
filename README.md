@@ -16,7 +16,8 @@ Jag har gjort [samma sak fast med tailwind ](https://gherghett.github.io/Systeme
 ## En till fast gjord med tailwind
 ![alt text](screenshots/tailwind.png)
 
-Anmärkningsvärt med tailwindversionen är att loggan som också är gjord helt med tailwind [Det finns en cool demo](https://gherghett.github.io/Systemet/logga/) 
+Anmärkningsvärt med tailwindversionen är att loggan som också är gjord helt med tailwind
+![systemet](https://github.com/user-attachments/assets/5aa08f9d-894e-4499-8281-fc6ae627b457)
 
 ![anatomy of the logo](screenshots/logo.png)
 
